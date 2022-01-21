@@ -11,11 +11,16 @@ namespace ChatSDK.SDK
     {
         public IAuth Auth { get; set; }
         public ICustomers Customers { get; set; }
-        private string _token { get; set; }
+        public IChannels Channels { get; set; }
+        private string _apiKey { get; set; }
+        private string _apiSecret { get; set; }
         private string _host { get; set; }
-        public ChatService(string Token, Environment environment)
+        private static string _token { get; set; }
+        private Environment _environment { get; set; }
+        public ChatService(string key, string secret, Environment environment)
         {
-            _token = Token;
+            _apiKey = key;
+            _apiSecret = secret;
 
             switch (environment)
             {
@@ -27,22 +32,41 @@ namespace ChatSDK.SDK
                     break;
                 case Environment.Prod:
                     throw new ServiceException("Not available.");
+                case Environment.Not_set:
+                    throw new ServiceException("Not available.");
 
             }
 
+
+            this.Auth = new Auth("", _host);
+
+            var tokenService = this.Auth.Authorize(new Model.Auth.GetApiTokenRequest { Key = _apiKey, Secret = _apiSecret });
+            tokenService.Wait();
+
+            _token = tokenService.Result.Token;
+
+
             this.Auth = new Auth(_token, _host);
             this.Customers = new Customers(_token, _host);
+            this.Channels = new Channels(_token, _host);
+
+
 
         }
 
-        public void UpdateToken(string token)
+
+        public async Task UpdateToken()
         {
-            this._token = token;
-            this.Auth = new Auth(token, _host);
+            var response = await Auth.Authorize(new Model.Auth.GetApiTokenRequest { Key = _apiKey, Secret = _apiSecret });
+            _token = response.Token;
+            this.Auth = new Auth(_token, _host);
             this.Customers = new Customers(_token, _host);
+            this.Channels = new Channels(_token, _host);
 
         }
-        public enum Environment { Dev, Prod, Localhost }
+
+
+        public enum Environment { Not_set, Dev, Prod, Localhost }
 
 
 

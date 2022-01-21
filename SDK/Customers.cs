@@ -41,7 +41,6 @@ namespace ChatSDK.SDK
         {
 
             RestRequest request = new RestRequest("Customer/Demand500", Method.Post);
-            //request.AddJsonBody<CreateCustomerRequest>(createCustomer);
             var response = await _cli.ExecuteAsync<StringIdResponse>(request);
 
             if (response.Ok())

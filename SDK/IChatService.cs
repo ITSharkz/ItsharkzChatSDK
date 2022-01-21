@@ -2,6 +2,9 @@
 {
     public interface IChatService
     {
-        void UpdateToken(string token);
+        IAuth Auth { get; set; }
+        ICustomers Customers { get; set; }
+
+        Task UpdateToken();
     }
 }
