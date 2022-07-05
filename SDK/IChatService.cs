@@ -1,6 +1,6 @@
-﻿namespace ChatSDK.SDK
+﻿namespace ITStreamSDK.SDK
 {
-    public interface IChatService
+    public interface IITStreamService
     {
         IAuth Auth { get; set; }
         ICustomers Customers { get; set; }

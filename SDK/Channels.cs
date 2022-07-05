@@ -1,6 +1,6 @@
-﻿using ChatSDK.Exceptions;
-using ChatSDK.Extensions;
-using ChatSDK.Model;
+﻿using ITStreamSDK.Exceptions;
+using ITStreamSDK.Extensions;
+using ITStreamSDK.Model;
 using Newtonsoft.Json;
 using RestSharp;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatSDK.SDK
+namespace ITStreamSDK.SDK
 {
     public class Channels : IChannels
     {

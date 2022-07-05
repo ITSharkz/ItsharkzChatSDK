@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static ChatSDK.Exceptions.ServiceException;
+using static ITStreamSDK.Exceptions.ServiceException;
 
-namespace ChatSDK.Exceptions
+namespace ITStreamSDK.Exceptions
 {
     public class ServiceException : Exception
     {

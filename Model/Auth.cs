@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatSDK.Model
+namespace ITStreamSDK.Model
 {
     public class Auth
     {

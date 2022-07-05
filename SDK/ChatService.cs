@@ -1,13 +1,13 @@
-﻿using ChatSDK.Exceptions;
+﻿using ITStreamSDK.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChatSDK.SDK
+namespace ITStreamSDK.SDK
 {
-    public class ChatService : IChatService
+    public class ITStreamService : IITStreamService
     {
         public IAuth Auth { get; set; }
         public ICustomers Customers { get; set; }
@@ -17,7 +17,7 @@ namespace ChatSDK.SDK
         private string _host { get; set; }
         private static string _token { get; set; }
         private Environment _environment { get; set; }
-        public ChatService(string key, string secret, Environment environment)
+        public ITStreamService(string key, string secret, Environment environment)
         {
             _apiKey = key;
             _apiSecret = secret;
@@ -33,6 +33,7 @@ namespace ChatSDK.SDK
                 case Environment.Prod:
                     throw new ServiceException("Not available.");
                 case Environment.Not_set:
+                    this._host = "https://service.itstream.app/";
                     throw new ServiceException("Not available.");
 
             }

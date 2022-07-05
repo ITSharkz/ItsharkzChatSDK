@@ -1,4 +1,4 @@
-﻿using ChatSDK.Extensions;
+﻿using ITStreamSDK.Extensions;
 using RestSharp;
 using RestSharp.Extensions;
 using RestSharp.Serializers;
@@ -9,10 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-using static ChatSDK.Model.Auth;
-using ChatSDK.Exceptions;
+using static ITStreamSDK.Model.Auth;
+using ITStreamSDK.Exceptions;
 
-namespace ChatSDK.SDK
+namespace ITStreamSDK.SDK
 {
     public class Auth : IAuth
     {

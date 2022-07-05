@@ -1,4 +1,4 @@
-﻿namespace ChatSDK.SDK
+﻿namespace ITStreamSDK.SDK
 {
     public interface IAuth
     {

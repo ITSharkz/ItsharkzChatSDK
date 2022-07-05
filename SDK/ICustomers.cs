@@ -1,6 +1,6 @@
-﻿using ChatSDK.Model;
+﻿using ITStreamSDK.Model;
 
-namespace ChatSDK.SDK
+namespace ITStreamSDK.SDK
 {
     public interface ICustomers
     {

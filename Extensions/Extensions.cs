@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ChatSDK.Exceptions;
+using ITStreamSDK.Exceptions;
 using RestSharp;
 
-namespace ChatSDK.Extensions
+namespace ITStreamSDK.Extensions
 {
     public static class Extensions
     {

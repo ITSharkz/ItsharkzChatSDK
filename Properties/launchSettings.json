@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ChatSDK": {
+    "ITStreamSDK": {
       "commandName": "Project"
     },
     "WSL": {
