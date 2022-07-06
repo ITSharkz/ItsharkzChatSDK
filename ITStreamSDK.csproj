@@ -8,6 +8,8 @@
     <AssemblyVersion>2.0.0.1</AssemblyVersion>
     <FileVersion>2.0.0.1</FileVersion>
     <Version>2.0.0.0</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Copyright>ITSharkz Sp. Z O.O.</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
