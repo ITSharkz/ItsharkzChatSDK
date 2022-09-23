@@ -72,8 +72,9 @@ namespace ITStreamSDK.SDK
             }
             else
             {
-                var error = JsonConvert.DeserializeObject<WebApiError>(response.Content);
-                throw new ServiceException(error.Error, error.Code);
+                return null;
+                //var error = JsonConvert.DeserializeObject<WebApiError>(response.Content);
+                //throw new ServiceException(error.Error, error.Code);
             }
         }
 
