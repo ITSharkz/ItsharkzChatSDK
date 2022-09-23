@@ -31,7 +31,9 @@ namespace ITStreamSDK.SDK
                     this._host = "http://127.0.0.1:5010/api/";
                     break;
                 case Environment.Prod:
-                    throw new ServiceException("Not available.");
+                    this._host = "https://service.itstream.app/api/";
+                    break;
+                //throw new ServiceException("Not available.");
                 case Environment.Not_set:
                     this._host = "https://service.itstream.app/";
                     throw new ServiceException("Not available.");
