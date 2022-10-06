@@ -54,7 +54,7 @@ namespace ITStreamSDK.SDK
             else
             {
                 var error = JsonConvert.DeserializeObject<WebApiError>(response.Content);
-                throw new ServiceException(error.Error, error.Code);
+                //throw new ServiceException(error.Error, error.Code);
             }
 
         }
@@ -72,7 +72,7 @@ namespace ITStreamSDK.SDK
             }
             else
             {
-                return null;
+                return new GetApiTokenResponse { Token = "" };
                 //var error = JsonConvert.DeserializeObject<WebApiError>(response.Content);
                 //throw new ServiceException(error.Error, error.Code);
             }
